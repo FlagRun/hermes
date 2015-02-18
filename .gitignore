@@ -1,0 +1,14 @@
+.env
+.DS_Store
+.idea
+.rbenv
+.rbx
+.gem
+.gemrc
+tmp/*
+data/*.yml
+data/*.rb
+log/*.log
+config.yml
+*.pstore
+config.yml

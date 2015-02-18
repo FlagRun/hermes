@@ -1,0 +1,42 @@
+production: &base
+  blur:
+    verbose: true
+    cache_path: cache/
+    scripts_path: lib/scripts/
+
+    defaults: &defaults
+      nickname: Hermes
+      username: hermes
+
+    networks:
+    - &flagrun
+      <<: *defaults
+      hostname: irc.flagrun.net
+      nickname: Hermes
+      secure: true
+      port: 6697
+      oper:
+        user:
+        password:
+      channels:
+      - "#bots"
+      - "#services"
+
+# Development-specific settings. This merges values with base (i.e. the
+# production configuration above.)
+development:
+  <<: *base
+  blur:
+    verbose: true
+    cache_path: cache/
+    scripts_path: lib/scripts/
+    networks:
+    - hostname: irc.darkscience.net
+      nickname: hermes-dev
+      oper:
+        user:
+        password:
+      channels:
+      - "#bots"
+      secure: true
+      port: 6697
